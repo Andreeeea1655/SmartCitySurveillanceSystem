@@ -1,0 +1,39 @@
+A city is deploying a complex surveillance system to improve safety,
+traffic control and cleanliness in the city. Across the whole city there are different
+surveillance cameras of different types:
+Speed cameras on roads to detect speeding vehicles.
+Traffic cameras to report congestion on roads.
+Public surveillance cameras in parks and streets to detect bad behaviour
+such as people throwing garbage on the street.
+
+Information gathered from speed cameras will be used by Traffic Police in order to
+record the driver's offence and to issue a fine.
+Information gathered from the public surveillance cameras is used by the Local Police
+in order to issue fines.
+Information from traffic cameras is used by several navigation apps in order to update
+their maps information.
+
+There is also a City Information Dashboard that displays the numbers of fines given for
+speeding and for throwing garbage and identfies the most dangerous neighborhoods
+(areas with biggest number of problems).
+Because the system must handle a big number of cameras and real-time events,
+the city decides to implement the platform using Event-Driven Architecture (EDA)
+using a Publish–Subscribe messaging system.
+This will allow the city to easily add new services (analytics, notifications)
+without modifying existing components.
+
+Basic requirements
+Identify the types of events, the associated data, the components involved and
+their roles as Publishers and/or Subscribers. (Events: detectedSpeedingVehicle, detectedCongestionOnRoads, detectedBadBehavior) Publishers: speed/surveillance/traffic cameras. Subscribers: Navigation Apps, Traffic/Local Police. assoiated data - de ce au nevoie subscriberii pt a face ce trebuie sa faca
+Implement a very simplified simulation of the city surveillance system using an in-process
+event bus with no concurrency and synchronous event delivery.
+Draw a sequence diagram showing what happens when a speed camera identifies a car having
+high speed.
+
+Bonus requirement (1 point)
+In order to make the simulation more realistic, all surveillance cameras work concurrently,
+each running in its own thread.
+Bonus requirement (1 point)
+In addition to the in-process version of the system, implement a second version,
+having all participants running in separate processes and use a messaging infrastructure
+for distributed Publish-Subscribe communication.
