@@ -53,6 +53,21 @@ Clasa principală: `green1.MainSensors`
 | Java | 23 |
 | Maven | 3.x |
 
+## Diagrama UML
+
+Diagrama de secvență ilustrează fluxul complet al unui eveniment în sistem:
+
+```
+Main → bus: register(tp1), register(cd)
+Main → spc1: setVehicleSpeed(90)
+spc1 → bus: post(SpeedingEvent)
+bus  → tp1: onSpeedingVehicle(event) → "Traffic police issued a fine..."
+bus  → cd:  onSpeedingVehicle(event) → "Update stats for Aradului"
+Main → cd:  printMostDangerous()
+```
+
+📄 Diagrama completă: [`DiagramaUML.pdf`](DiagramaUML.pdf)
+
 ## Tehnologii & Concepte
 
 - Java 23
